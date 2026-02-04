@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>روابطي | Ahmed</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+@font-face {
+  font-family: "JMHTypewriter";
+  src: url("JMH Typewriter.ttf");
+}
+@font-face {
+  font-family: "MarsArabic";
+  src: url("Mars-Oblique-Left.otf.ttf");
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:#050505;
+  font-family:"MarsArabic", Tahoma, sans-serif;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+}
+
+/* خلفية صورة تيك توك الأول */
+.bg-preview{
+  position:fixed;
+  inset:0;
+  background:url("حساب تيك توك الاول.jpg") center/cover no-repeat;
+  opacity:0;
+  filter: blur(6px);
+  transition: opacity .6s ease;
+  z-index:0;
+}
+
+/* خلفية صورة تيك توك الثاني */
+.bg-preview-second{
+  position:fixed;
+  inset:0;
+  background:url("صوره بروفايل تيك توك الثانيه.jpg") center/cover no-repeat;
+  opacity:0;
+  filter: blur(6px);
+  transition: opacity .6s ease;
+  z-index:0;
+}
+
+/* خلفية جروب واتساب */
+.bg-preview-whatsapp{
+  position:fixed;
+  inset:0;
+  background:url("جروب وتساب.jpg") center/cover no-repeat;
+  opacity:0;
+  filter: blur(6px);
+  transition: opacity .6s ease;
+  z-index:0;
+}
+
+/* خلفية تواصل معي */
+.bg-preview-contact{
+  position:fixed;
+  inset:0;
+  background:url("بروفايلت.jpg") center/cover no-repeat;
+  opacity:0;
+  filter: blur(6px);
+  transition: opacity .6s ease;
+  z-index:0;
+}
+
+/* طبقة تعتيم */
+.bg-preview::after,
+.bg-preview-second::after,
+.bg-preview-whatsapp::after,
+.bg-preview-contact::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+}
+
+.scene{
+  perspective:1400px;
+  z-index:2;
+}
+
+.card{
+  width:min(92vw,420px);
+  padding:34px 26px;
+  background: rgba(25,25,25,.85);
+  backdrop-filter: blur(18px);
+  border-radius:40px;
+  border:1px solid rgba(255,255,255,.1);
+  transform-style:preserve-3d;
+  transition:.15s ease;
+  box-shadow:0 35px 70px rgba(0,0,0,.6);
+}
+
+.layer{ transform:translateZ(60px) }
+.layer.deep{ transform:translateZ(100px) }
+
+/* صورة البروفايل */
+.profile-wrap{
+  width:130px;
+  height:130px;
+  margin:auto;
+  padding:6px;
+  border-radius:50%;
+  background: linear-gradient(270deg,#00f2ea,#00c4b4,#00f2ea);
+  background-size:400% 400%;
+  animation:borderMove 5s linear infinite;
+}
+@keyframes borderMove{
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+.profile-img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+h1{
+  margin:14px 0 6px;
+  font-size:34px;
+  font-family:"JMHTypewriter", monospace;
+}
+
+p{ color:#bbb; margin-bottom:28px }
+
+/* الأزرار */
+.link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:16px 0;
+  padding:18px;
+  border-radius:999px;
+  background: linear-gradient(135deg,#1e1e1e,#111);
+  border:1px solid rgba(255,255,255,.1);
+  color:#fff;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.link i{ color:#00f2ea }
+
+.link:hover{
+  transform: scale(1.06);
+  box-shadow:0 20px 40px #00f2ea44;
+}
+
+.footer{
+  margin-top:26px;
+  font-size:12px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<!-- الخلفيات -->
+<div class="bg-preview" id="bgPreview"></div>
+<div class="bg-preview-second" id="bgPreviewSecond"></div>
+<div class="bg-preview-whatsapp" id="bgPreviewWhatsapp"></div>
+<div class="bg-preview-contact" id="bgPreviewContact"></div>
+
+<div class="scene">
+  <div class="card" id="card">
+
+    <div class="layer deep">
+      <div class="profile-wrap">
+        <img src="بروفايلت.jpg" class="profile-img" alt="Ahmed">
+      </div>
+    </div>
+
+    <div class="layer">
+      <h1>Ahmed</h1>
+      <p>صانع محتوى | تيك توك</p>
+    </div>
+
+    <!-- زر تيك توك الأول -->
+    <a class="link layer tiktok-main" id="tiktokMain"
+       href="https://www.tiktok.com/@musli_m271?_r=1&_t=ZS-93cvUMkE5HV">
+      <i class="fa-brands fa-tiktok"></i>
+      قناتي الأولى تيك توك
+    </a>
+
+    <!-- زر تيك توك الثاني -->
+    <a class="link layer" id="tiktokSecond"
+       href="https://www.tiktok.com/@musli_m127?_r=1&_t=ZS-93cvdEOjKLJ">
+      <i class="fa-brands fa-tiktok"></i>
+      قناتي الثانية تيك توك
+    </a>
+
+    <!-- زر جروب واتساب -->
+    <a class="link layer" id="whatsappGroup"
+       href="https://chat.whatsapp.com/K86QGlqeTseFHBBR2udGnE?mode=gi_t">
+      <i class="fa-brands fa-whatsapp"></i>
+      مجموعة واتساب إسلامية
+    </a>
+
+    <!-- زر تواصل معي -->
+    <a class="link layer" id="contactBtn"
+       href="https://wa.me/201009390573">
+      <i class="fa-solid fa-phone"></i>
+      تواصل واتساب
+    </a>
+
+    <div class="footer layer">© 2026 Ahmed</div>
+
+  </div>
+</div>
+
+<script>
+/* 3D Tilt */
+const card = document.getElementById("card");
+const bg = document.getElementById("bgPreview");
+const bgSecond = document.getElementById("bgPreviewSecond");
+const bgWhatsapp = document.getElementById("bgPreviewWhatsapp");
+const bgContact = document.getElementById("bgPreviewContact");
+
+const btnMain = document.getElementById("tiktokMain");
+const btnSecond = document.getElementById("tiktokSecond");
+const btnWhatsapp = document.getElementById("whatsappGroup");
+const btnContact = document.getElementById("contactBtn");
+
+function tilt(x,y){
+  const b = card.getBoundingClientRect();
+  const px = (x - b.left) / b.width - .5;
+  const py = (y - b.top) / b.height - .5;
+  card.style.transform =
+    `rotateX(${-py*12}deg) rotateY(${px*16}deg)`;
+}
+
+card.addEventListener("mousemove", e => tilt(e.clientX,e.clientY));
+card.addEventListener("mouseleave", ()=> card.style.transform="rotateX(0) rotateY(0)");
+
+/* إظهار الخلفية الأولى */
+btnMain.addEventListener("mouseenter", ()=> bg.style.opacity = "0.35");
+btnMain.addEventListener("mouseleave", ()=> bg.style.opacity = "0");
+btnMain.addEventListener("touchstart", ()=> bg.style.opacity = "0.35");
+btnMain.addEventListener("touchend", ()=> bg.style.opacity = "0");
+
+/* إظهار الخلفية الثانية */
+btnSecond.addEventListener("mouseenter", ()=> bgSecond.style.opacity = "0.35");
+btnSecond.addEventListener("mouseleave", ()=> bgSecond.style.opacity = "0");
+btnSecond.addEventListener("touchstart", ()=> bgSecond.style.opacity = "0.35");
+btnSecond.addEventListener("touchend", ()=> bgSecond.style.opacity = "0");
+
+/* إظهار خلفية جروب واتساب */
+btnWhatsapp.addEventListener("mouseenter", ()=> bgWhatsapp.style.opacity = "0.35");
+btnWhatsapp.addEventListener("mouseleave", ()=> bgWhatsapp.style.opacity = "0");
+btnWhatsapp.addEventListener("touchstart", ()=> bgWhatsapp.style.opacity = "0.35");
+btnWhatsapp.addEventListener("touchend", ()=> bgWhatsapp.style.opacity = "0");
+
+/* إظهار خلفية تواصل معي */
+btnContact.addEventListener("mouseenter", ()=> bgContact.style.opacity = "0.35");
+btnContact.addEventListener("mouseleave", ()=> bgContact.style.opacity = "0");
+btnContact.addEventListener("touchstart", ()=> bgContact.style.opacity = "0.35");
+btnContact.addEventListener("touchend", ()=> bgContact.style.opacity = "0");
+</script>
+
+</body>
+</html>
